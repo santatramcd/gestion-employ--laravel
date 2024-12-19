@@ -30,7 +30,7 @@
         }
 
         .btn-custom:hover {
-            background-color: #007bff;
+            /* background-color: #007bff; */
             color: white;
             transform: scale(1.1);
         }
@@ -38,12 +38,16 @@
 </head>
 
 <body>
-
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <a class="btn btn-outline-primary me-2" type="button" href="{{route('employer.create')}}">Ajouter employers</a>
+  </form>
+</nav>
     <div class="container mt-5">
         <div class="d-flex mb-4">
-            <button class="btn btn-outline-primary btn-custom" data-target="content1">1</button>
-            <button class="btn btn-outline-primary btn-custom" data-target="content2">2</button>
-            <button class="btn btn-outline-primary btn-custom" data-target="content3">3</button>
+            <button class="btn btn-outline-dark btn-custom" data-target="content1">Tous les employers</button>
+            <button class="btn btn-outline-dark btn-custom" data-target="content2">2</button>
+            <button class="btn btn-outline-dark btn-custom" data-target="content3">3</button>
         </div>
 
         <div>
@@ -51,15 +55,17 @@
             <table class="table">
   <thead>
     <tr>
-      <th scope="col">order</th>
-      <th scope="col">Product</th>
-      <th scope="col">customer</th>
-      <th scope="col">date</th>
-      <th scope="col">status</th>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contact</th>
       <th scope="col">total</th>
     </tr>
   </thead>
   <tbody>
+    @forelse($employers as $employer)
+
     <tr>
       <th scope="row">1</th>
       <td>Mark</td>
@@ -68,6 +74,11 @@
       <td>@mdo</td>
       <td>view</td>
     </tr>
+    @empty
+    <th scope="row" class='coll' colspan="6">Aucun employer ajouter</th>
+
+    @endforelse
+
   </tbody>
 </table>
             </div>
