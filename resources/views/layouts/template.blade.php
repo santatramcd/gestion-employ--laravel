@@ -19,49 +19,48 @@
         <!-- Main content -->
         <div class="content flex-fill">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Mon Tableau de Bord</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Profil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Notifications</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+        @include('layouts.topbar')
 
             <!-- Content Section -->
             <div class="container mt-4">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-3">
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h5>Statistiques du Mois</h5>
+                                <h5>Total Départements</h5>
                             </div>
                             <div class="card-body">
-                                <p>Voici un graphique des statistiques pour ce mois-ci...</p>
+                                <h1 class="text-center">{{$totaldepartements}}</h1>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-3">
                         <div class="card mb-4">
                             <div class="card-header">
-                                <h5>Utilisateurs récents</h5>
+                                <h5>Total Employers</h5>
                             </div>
                             <div class="card-body">
-                                <ul>
-                                    <li>Utilisateur 1</li>
-                                    <li>Utilisateur 2</li>
-                                    <li>Utilisateur 3</li>
-                                </ul>
+                                <h1 class="text-center">{{$totalEmployers}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5>Total Administrateurs</h5>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="text-center">{{$totalAdministrateurs}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5>Retard de payements</h5>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="text-center">0</h1>
                             </div>
                         </div>
                     </div>
